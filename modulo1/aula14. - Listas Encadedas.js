@@ -21,22 +21,23 @@ console.log(car1);
 console.log(car2);
 console.log(car3);
 
+// nó é como se chama um item da lista
 class Node {
     constructor(valor) {
-        this.valor = valor;
-        this.proximo = null;
+        this.valor = valor;  // valor guardado no nó
+        this.proximo = null; // ponteiro para o próximo nó
     }
 }
 
 class LinkedList {
     constructor() {
-        this.head = null;
+        this.head = null; // início da lista (vazio no começo)
     }
 
     inserirInicio(valor) {
-        let novo = new Node(valor);
-        novo.proximo = this.head;
-        this.head = novo;
+        let novo = new Node(valor); // cria novo nó com o valor
+        novo.proximo = this.head; // novo nó aponta para o antigo nó
+        this.head = novo; // novo nó vira o primeiro da lista
     }
 
     imprimir() {
@@ -55,38 +56,3 @@ let lista = new LinkedList();
 lista.inserirInicio(10);
 lista.inserirInicio(9);
 lista.imprimir();
-
-class Node {
-    constructor(valor) {
-        this.valor = valor
-        this.anterior = null
-        this.proximo = null
-    } 
-}
-
-class DoublyLinkedList {
-    constructor() {
-        this.head = null
-    }
-
-    inserirInicio(valor) {
-        let novo = new Node(valor)
-        novo.next = this.head
-        if(this.head){
-            this.head.anterior = novo
-        }
-        this.head = novo
-    }
-
-    inserirFim() {
-
-    }
-
-    imprimirFrente() {
-
-    }
-
-    imprimirAtras() {
-
-    }
-}
