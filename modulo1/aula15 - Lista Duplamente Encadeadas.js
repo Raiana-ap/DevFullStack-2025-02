@@ -99,7 +99,7 @@ class DoublyLinkedList {
                 atual = atual.proximo
             }
             removido = atual
-            const {proximo,anterior} = atual // mesma coisa que colocar atual. ... nesses outros
+            const { proximo, anterior } = atual // mesma coisa que colocar atual. ... nesses outros
             anterior.proximo = proximo
             proximo.anterior = anterior
         }
