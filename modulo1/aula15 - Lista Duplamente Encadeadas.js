@@ -79,8 +79,30 @@ class DoublyLinkedList {
         this.length++
     }
     removerFim(indice) {
-      if (indice < 0 || indice > this.length) throw RangeError
-            ("ïndice está fora dos limites!")  
-        
+        if (indice < 0 || indice > this.length) throw RangeError
+            ("ïndice está fora dos limites!")
+        let removido
+        if (this.length === 1) {
+            removido = this.head
+            this.head = this.tail = null
+        } else if (indice === 0) {
+            removido = this.head
+            this.head = this.head.proximo
+            this.head.anterior = null
+        } else if (indice === this.length - 1) {
+            removido = this.tail
+            this.tail = this.tail.anterior
+            this.tail.proximo = null
+        } else {
+            let atual = this.head
+            for (let i = 0; i < indice; i++) {
+                atual = atual.proximo
+            }
+            removido = atual
+            const {proximo,anterior} = atual // mesma coisa que colocar atual. ... nesses outros
+            anterior.proximo = proximo
+            proximo.anterior = anterior
+        }
+        this.length--
     }
 }
