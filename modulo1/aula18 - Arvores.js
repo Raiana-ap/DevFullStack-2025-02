@@ -25,7 +25,7 @@ class Tree { // Classe que representa a árvore como um todo
 
     traverseDFS(callback){
     // Percorre a árvore em profundidade (DFS - Depth-First Search)
-        function recurse(node){
+        function recurse(node){ // node é o nó atual da árvore
             callback(node)
             node.children.forEach(child => recurse(child))
         }
@@ -33,7 +33,7 @@ class Tree { // Classe que representa a árvore como um todo
     }
 
     printTree (node = this.root, prefix = '', isLast = true){
-        console.log(prefix + (isLast ? '|_' : '|-') + node.value);
+        console.log(prefix + (isLast ? '|_'/*if(true)*/: '|-'/*else*/) + node.value);
 
         const childCount = node.children.length
         node.children.forEach((child, index) => {
