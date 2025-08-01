@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Anotações sobre Git</title>
+</head>
+<body>
+  <h1>Anotações sobre Git</h1>
+
+  <h2>Comandos básicos - terminal bash</h2>
+  <ul>
+    <li><code>git init</code> → Inicia um repositório Git</li>
+    <li><code>git status .</code> → Mostra os arquivos</li>
+    <li><code>git add .</code> → Adiciona todos os arquivos</li>
+    <li><code>git commit -m "mensagem"</code> → Salva as alterações</li>
+    <li><code>git log</code> → Mostra o histórico de <em>registros de commits</em></li>
+  </ul>
+
+  <hr>
+
+  <h3>Trabalhando com repositórios remotos</h3>
+  <ul>
+    <li><code>git remote add &lt;nome&gt; &lt;url&gt;</code> → Adiciona um repositório remoto (ex: GitHub)</li>
+    <li><code>git push &lt;nome&gt;</code> → Envia os commits locais para o repositório remoto (ex: <code>git push origin main</code>)</li>
+  </ul>
+
+  <hr>
+
+  <h2>Permissões e Segurança</h2>
+  <p><strong>Token de acesso:</strong><br>
+    Um token substitui a senha no GitHub para permitir ações como <code>push</code> e <code>pull</code> com <strong>permissões limitadas e prazo de validade</strong>.<br>
+    Você pode gerar tokens no GitHub em: <br>
+    <code>Settings &gt; Developer Settings &gt; Personal access tokens</code>
+  </p>
+
+  <hr>
+
+  <h3>.gitignore</h3>
+  <p>O arquivo <code>.gitignore</code> serve para listar <strong>arquivos e pastas que o Git deve ignorar</strong>.</p>
+
+  <hr>
+
+  <h2>Git ID (Hash)</h2>
+  <p>Cada <strong>commit</strong> (e objeto no Git) possui uma <strong>ID única de 40 caracteres</strong>:<br>
+  Um <em>hash SHA-1</em>, que serve como <strong>referência criptográfica</strong> para garantir integridade.</p>
+  <p><strong>Exemplo de hash:</strong> <code>a47c84b1ad7e9f3058439218b2d334c38bbfdd71</code></p>
+
+  <hr>
+
+  <h2>Tipos de objetos</h2>
+  <ul>
+    <li><strong>Blob</strong> → conteúdo, sem nome (geralmente em binários)</li>
+    <li><strong>Tree</strong> → árvore, faz referência a outras árvores ou blobs</li>
+    <li><strong>Commit</strong> → snapshot do conteúdo com metadados</li>
+    <li><strong>TAG</strong> → (marcação, exemplo: versão v1.0)</li>
+  </ul>
+
+  <hr>
+
+  <h3>Estados do arquivo</h3>
+  <ul>
+    <li><strong>Untracked</strong> → arquivo novo, ainda não rastreado</li>
+    <li><strong>Unmodified</strong> → rastreado, sem modificações</li>
+    <li><strong>Modified</strong> → modificado</li>
+    <li><strong>Staged</strong> → pronto para commit</li>
+  </ul>
+
+  <hr>
+
+  <h2>Branches e HEAD</h2>
+  <ul>
+    <li><strong>Branches</strong> são linhas paralelas de desenvolvimento independentes</li>
+    <li>Branch padrão: <code>main</code> ou <code>master</code></li>
+    <li><code>git branch nome-da-branch</code> → cria nova branch</li>
+    <li><code>git checkout nome-da-branch</code> → muda para outra branch</li>
+    <li><code>git switch nome-da-branch</code> → forma moderna de trocar</li>
+    <li><strong>HEAD</strong> é o ponteiro para o commit atual (geralmente o último da branch)</li>
+  </ul>
+
+  <p><strong>Remotes:</strong> repositórios Git externos, como GitHub, GitLab, etc. Nome padrão: <code>origin</code></p>
+
+  <h4>Comandos úteis:</h4>
+  <ul>
+    <li><code>git remote -v</code> → lista repositórios remotos</li>
+    <li><code>git remote add nome URL</code> → adiciona remoto (ex: <code>git remote add origin https://github.com/usuario/repositorio.git</code>)</li>
+    <li><code>git push origin nome-da-branch</code> → envia commits</li>
+    <li><code>git pull origin nome-da-branch</code> → busca e integra alterações</li>
+    <li><code>git clone URL</code> → clona o repositório</li>
+  </ul>
+
+  <hr>
+
+  <h3>Desfazendo alterações no Git - terminal bash</h3>
+  <ul>
+    <li><code>git restore nome-do-arquivo</code> → descarta alterações locais</li>
+    <li><code>git checkout -- nome-do-arquivo</code> → (antigo) descarta alterações locais</li>
+    <li><code>git reset nome-do-arquivo</code> → remove da staging sem apagar o conteúdo</li>
+    <li><code>git reset --soft HEAD~1</code> → desfaz último commit (mantém staging)</li>
+    <li><code>git reset --mixed HEAD~1</code> → desfaz commit e staging (mantém arquivos)</li>
+    <li><code>git reset --hard HEAD~1</code> → apaga tudo (commit, staging e arquivos)</li>
+    <li><code>git revert id-do-commit</code> → cria um commit que desfaz outro (mantém histórico)</li>
+    <li><code>git push origin nome-da-branch --force</code> → força envio da branch remota</li>
+    <li><code>git branch -d nome-da-branch</code> → deleta branch local (se já foi mergeada)</li>
+    <li><code>git branch -D nome-da-branch</code> → força exclusão da branch (sem merge)</li>
+  </ul>
+
+  <hr>
+
+  <h2>Git Stash</h2>
+  <p>Comando para <strong>guardar temporariamente alterações não commitadas</strong>, permitindo mudar de branch ou realizar outras tarefas sem perder progresso.</p>
+
+  <h4>Comandos básicos:</h4>
+  <ul>
+    <li><code>git stash</code> → guarda todas as alterações não commitadas</li>
+    <li><code>git stash save "mensagem"</code> → salva com descrição</li>
+    <li><code>git stash list</code> → mostra a lista de stashes salvos</li>
+    <li><code>git stash apply</code> → aplica a última stash (sem remover)</li>
+    <li><code>git stash apply stash@{n}</code> → aplica stash específica</li>
+    <li><code>git stash pop</code> → aplica e remove do stash</li>
+    <li><code>git stash drop stash@{n}</code> → remove stash específica</li>
+    <li><code>git stash clear</code> → remove todas as stashes</li>
+  </ul>
+</body>
+</html>
