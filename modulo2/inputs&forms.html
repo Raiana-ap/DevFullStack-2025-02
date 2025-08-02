@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários e Inputs</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /*viewport height = alatura da tela do dispositivo*/
+        }
+
+        #form-container {
+            background-color: rgb(255, 129, 129);
+            border-radius: 8%;
+            box-shadow: 5px 6px 15px rgb(61, 0, 0);
+            padding: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(118, 19, 19);
+        }
+
+        label {
+            display: block;
+            color: rgb(155, 0, 0);
+            margin-bottom: 10px;
+        }
+
+        .input-group,
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 3px;
+        }
+
+        #resume {
+            background-color: white;
+        }
+
+        button {
+            background-color: brown;
+            color: white;
+            border: 1px solid rgb(242, 0, 0);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 7px;
+        }
+
+        button:hover{
+            background-color: rgb(118, 19, 19);
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            padding: 5px;
+            border: 1px solid rgb(155, 0, 0);
+            border-radius: 8px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form-container" style="border: 1px solid red;">
+        <h1>Formulário de Cadastro</h1>
+        <form>
+            <div class="input-group">
+                <label for="nome">Nome:</label>
+                <input id="nome" type="text" placeholder="Digite seu nome completo">
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input id="email" type="text">
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input id="senha" type="text">
+            </div>
+            <div class="input-group">
+                <label for="telefone">Telefone:</label>
+                <input id="telefone" type="tel">
+            </div>
+            <div class="input-group">
+                <label for="website">Website:</label>
+                <input id="website" type="url">
+            </div>
+            <div class="input-group">
+                <label for="data">Data:</label>
+                <input id="data" type="date">
+            </div>
+            <div class="input-group">
+                <label for="hora">Hora:</label>
+                <input id="hora" type="time">
+            </div>
+            <div class="input-group">
+                <label for="pesquisa">Pesquisa:</label>
+                <input id="pesquisa" type="search">
+            </div>
+            <div class="input-group">
+                <label for="quantidade">Quantidade:</label>
+                <input id="quantidade" type="number">
+            </div>
+            <div class="input-group">
+                <label>Gênero:</label>
+                <div class="radio-group">
+                    <label for="male">
+                        <input id="male" value="male" type="radio" name="gender">Maculino
+                    </label>
+                    <label for="female">
+                        <input id="female" value="female" type="radio" name="gender">Feminino
+                    </label>
+                    <label for="other">
+                        <input id="other" value="other" type="radio" name="gender">Outro
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Preferências:</label>
+                <div class="checkbox-group">
+                    <label for="newsletter">
+                        <input id="newsletter" type="checkbox" name="newsletter">Assinar newsletter
+                    </label>
+                    <label for="updates">
+                        <input id="updates" type="checkbox" name="updates">Receber updates
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="resume">Carregar curículo:</label>
+                <input id="resume" type="file" name="resumes">
+            </div>
+            <div class="input-group">
+                <label for="city">Cidade:</label>
+                <select id="city">
+                    <option value="poa">Porto Alegre</option>
+                    <option value="natal">Natal</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="bh">Belo Horizonte</option>
+                    <option value="cu">Curitiba</option>
+                    <option value="floripa">Florianópolis</option>
+                    <option value="mp">Macapá</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="message">Menssagem:</label>
+                <textarea name="message" id="message" placeholder="Deixe sua mensagem"></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
