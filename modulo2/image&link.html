@@ -10,9 +10,15 @@
 <body>
     <header>
         <h1>Links e Imagens</h1>
+        <hr>
     </header>
+     <nav>
+    <a href="#links">Links</a>
+    <a href="#imagens">Imagens</a>
+    <a href="#videos">Vídeos</a>
+  </nav>
     <main>
-        <section>
+        <section id="links">
             <h2>Links</h2>
             <p>
                 Visite o site <a href="https://youtube.com" target="_black" ref="noopener noreferer">Youtube</a>
@@ -24,12 +30,39 @@
                 quo nobis, magnam officiis porro aperiam id amet qui sapiente consequatur laboriosam? Inventore vel quos
                 a placeat facilis?</p>
         </section>
-        <section>
+        <hr>
+        <section id="imagens">
             <h2>Imagens</h2>
+            <h3>Padrão</h3>
+            <figure>
+                <img src="imgs/superbaby.jpg" alt="Superman Bebê" width="300">
+                <figcaption>Legenda</figcaption>
+            </figure>
+            <h3>Muda conforme alargura da tela</h3>
+            <figure>
+                <picture> <!--seleciona qual imagem usar de acordo com o tamanho da tela-->
+                    <source media="(min-width: 800px)" srcset="imgs/robo.jpg" width="300">
+                    <source media="(min-width: 480px)" srcset="imgs/fox.webp" width="300">
+                    <img src="imgs/bonfire.webp" alt="bonfire" width="300">
+                </picture>
+            </figure>
+            <h3>Imagem clicável</h3>
+            <a href="https://pixabay.com/pt/illustrations/vaso-flores-ainda-vida-ramalhete-9585892" target="_black"
+                ref="noopener noreferer">
+                <img src="imgs/vase.webp" alt="vaso de flor com livros escorados" width="300">
+            </a>
+        </section>
+        <hr>
+        <section id="videos">
+            <h2>Vídeos</h2>
+            <iframe width="844" height="475" src="https://www.youtube.com/embed/KL7AI1gaVx8"
+                title="CAMILA FREMDER E JANA ROSA - PODDELAS PODCAST #469" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe><!--aperta com o botão direito no vídeo; copy embed code-->
 
-
-
-            
+            <video src="bloalaba" type="video/mp4"></video>
+            <audio src="balblabla" type="audio/ogg"></audio> <!--Também da para usar o source-->
         </section>
     </main>
 </body>
