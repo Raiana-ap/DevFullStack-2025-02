@@ -1,0 +1,158 @@
+h2 {
+    /*seletor de tipo (simples)*/
+    color: blueviolet;
+}
+
+.destaque {
+    /*seletor de classe*/
+    background-color: rgb(223, 194, 249);
+}
+
+#cabeçalho {
+    /*seletor de id*/
+    text-align: center;
+    margin-left: 180px;
+}
+
+ul li {
+    /*seletor combinado*/
+    font-size: 10px;
+}
+
+ul li.importante {
+    /*seletor descendente com classe*/
+    font-size: 20px;
+    color: rgb(91, 0, 156);
+}
+
+a:hover {
+    /*seletor de pseudo-classe.*/
+    background-color: rgb(86, 43, 226);
+}
+
+/* 
+    seletor inline: 1000
+    seletor de id: 100
+    seletor de classe: 50
+    seletor de tipo: 10
+*/
+/*herança*/
+div {
+    color: rgb(146, 0, 171);
+    border: 1px dashed purple;
+    margin-top: 10px;
+}
+
+div p {
+    border: 1px solid palevioletred;
+}
+
+h3,
+h4 {
+    text-align: center;
+}
+
+/*relacionamento*/
+h3+p {
+    /*paragráfo imediatamente depois do h3*/
+    color: rgb(84, 20, 163)
+}
+
+h3~p {
+    /*todos p após h3*/
+    font-style: italic;
+}
+
+h4>a {
+    /*link dentro do h4*/
+    font-size: 20px;
+}
+
+/*Tabela*/
+
+table {
+    margin: 0 auto;
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 70%;
+    background-color: rgb(223, 128, 255);
+    box-shadow: 4px 5px 10px purple
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #b536f4;
+    color: rgb(36, 0, 44);
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    /*seleciona os filhos pares || ímpares = nth-child(odd)*/
+    background-color: #ffaff2;
+}
+
+/*
+nth = enésimo = que ou o que ocupa a posição do número 
+even = par
+odd -ímpar
+*/
+
+tr:hover {
+    background-color: #e65aff;
+    cursor: pointer;
+}
+
+/*Menu lateral*/
+aside {
+    width: 200px;
+    height: 100vh;
+    background-color: rgb(77, 5, 144);
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+aside h2 {
+    color: rgb(235, 179, 255);
+    margin-top: 0;
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(235, 179, 255);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    margin: 15px 0;
+}
+
+aside a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 12px;
+}
+
+aside a:hover {
+    background-color: #5e0080;
+}
+
+main {
+    margin-left: 180px;
+    padding: 30px;
+}
