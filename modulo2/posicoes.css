@@ -1,0 +1,105 @@
+/*O box-sizing: border-box; é uma propriedade do CSS que muda a forma como o navegador calcula o tamanho total de um elemento (largura e altura).*/
+
+/*
+UNIDADES DE MEDIDA
+
+| Unidade | Significado              | Exemplo            |
+| ------- | ------------------------ | ------------------ |
+| `px`    | Pixels                   | `font-size: 16px;` |
+| `cm`    | Centímetros              | `width: 5cm;`      |
+| `mm`    | Milímetros               | `height: 30mm;`    |
+| `in`    | Polegadas (1in = 2.54cm) | `width: 1in;`      |
+| `pt`    | Pontos (1pt = 1/72 in)   | `font-size: 12pt;` |
+| `pc`    | Picas (1pc = 12pt)       | `font-size: 1pc;`  |
+
+UNIDADES RELATIVAS
+
+| Unidade | Base de referência                           | Exemplo             |
+| ------- | -------------------------------------------- | ------------------- |
+| `%`     | Relativo ao elemento pai                     | `width: 50%;`       |
+| `em`    | Relativo ao tamanho da fonte atual           | `font-size: 2em;`   |
+| `rem`   | Relativo ao tamanho da fonte raiz (`html`)   | `margin: 1rem;`     |
+| `vw`    | 1% da largura da janela (viewport)           | `width: 100vw;`     |
+| `vh`    | 1% da altura da janela (viewport)            | `height: 100vh;`    |
+| `vmin`  | 1% do menor entre largura e altura da janela | `font-size: 5vmin;` |
+| `vmax`  | 1% do maior entre largura e altura da janela | `width: 80vmax;`    |
+| `ch`    | Largura do caractere "0" da fonte atual      | `width: 20ch;`      |
+| `ex`    | Altura do "x" minúsculo da fonte atual       | Pouco usado         |
+
+*/
+
+/*
+Responsividade = capacidade de um sistema ou site se adaptar a diferentes tamanhos de tela e dispositivos, oferecendo uma boa experiência de usuário em qualquer plataforma.
+*/
+
+/*
+POSIÇÕES COMUNS
+- static
+- relative
+- absolute
+- fixed
+- sticky
+*/
+
+.caixa {
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+    margin-bottom: 8px;
+}
+
+.static {
+    /*comum, fluxo natural da página, não consegue movimentar, elementos um abaixo do outro*/
+    position: static;
+    background-color: lightblue;
+    left: 20px;
+    /*não tem efeito*/
+}
+
+.relative {
+    /*O elemento mantém sua posição no fluxo normal, mas você pode mover ele em relação a si mesmo com top, left, etc.
+    \ Útil como base para um filho com absolute */
+    position: relative;
+    background-color: lightgreen;
+    left: 20px;
+}
+
+.pai {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: orangered;
+}
+
+.absolute {
+    /*O elemento sai completamente do fluxo da página.
+    É posicionado em relação ao parente relative mais próximo (ou ao body, se não houver).
+    Usado para criar caixas flutuantes, menus, tooltips, etc.*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 500px;
+    background-color: orange;
+}
+
+.fixed{
+    /*Sai do fluxo normal da página.Fica fixo em relação à tela, mesmo se a página for rolada.*/
+    position: fixed; /*comum no header e menu*/
+    bottom: 20px;
+    right: 20px;
+    background-color: royalblue;
+    padding: 10px;
+}
+
+.conteudo{
+    height: 100vh; /*quando o elemento sticky passar disso ele grupa e depois some*/
+    padding: 20px;
+}
+.sticky{
+    /*É uma mistura de relative e fixed. 
+    O elemento rola junto com a página até um certo ponto, e aí gruda.*/
+    position: sticky;
+    top: 0; 
+    background-color: palevioletred
+}
