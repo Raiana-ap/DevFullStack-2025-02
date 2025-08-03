@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+    <h1>Anotações Flexbox</h1>
+
+  <section>
+    <h2>justify-content (alinhamento horizontal)</h2>
+    <p>Controla como os itens se distribuem no <strong>eixo principal</strong> (geralmente na horizontal).</p>
+    <table>
+      <tr><th>Valor</th><th>Descrição</th></tr>
+      <tr><td><code>flex-start</code></td><td>Itens à esquerda.</td></tr>
+      <tr><td><code>flex-end</code></td><td>Itens à direita.</td></tr>
+      <tr><td><code>center</code></td><td>Itens centralizados.</td></tr>
+      <tr><td><code>space-between</code></td><td>Espaço igual entre os itens.</td></tr>
+      <tr><td><code>space-around</code></td><td>Espaço igual ao redor dos itens.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>align-items (alinhamento vertical)</h2>
+    <p>Define o alinhamento dos itens no <strong>eixo cruzado</strong> (geralmente vertical).</p>
+    <table>
+      <tr><th>Valor</th><th>Descrição</th></tr>
+      <tr><td><code>flex-start</code></td><td>Alinhado no topo.</td></tr>
+      <tr><td><code>flex-end</code></td><td>Alinhado na base.</td></tr>
+      <tr><td><code>center</code></td><td>Alinhado ao centro vertical.</td></tr>
+      <tr><td><code>baseline</code></td><td>Alinhado pela linha de base do texto.</td></tr>
+      <tr><td><code>stretch</code></td><td>Itens se esticam para preencher o container.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>flex-direction</h2>
+    <p>Define a direção do eixo principal (ordem dos itens).</p>
+    <table>
+      <tr><th>Valor</th><th>Descrição</th></tr>
+      <tr><td><code>row</code></td><td>Horizontal (esquerda → direita).</td></tr>
+      <tr><td><code>row-reverse</code></td><td>Horizontal invertido (direita → esquerda).</td></tr>
+      <tr><td><code>column</code></td><td>Vertical (topo → base).</td></tr>
+      <tr><td><code>column-reverse</code></td><td>Vertical invertido (base → topo).</td></tr>
+    </table>
+    <div class="dica"><strong>Obs:</strong> Ao usar <code>column</code>, o <code>justify-content</code> passa a atuar na vertical!</div>
+  </section>
+
+  <section>
+    <h2>order (reordenação)</h2>
+    <p>Permite mudar a ordem de exibição de itens sem alterar o HTML.</p>
+    <p>Exemplo:</p>
+    <code>.item { order: 2; }</code>
+  </section>
+
+  <section>
+    <h2>align-self</h2>
+    <p>Alinha um item individualmente, sobrescrevendo o <code>align-items</code> do container.</p>
+    <p>Exemplo:</p>
+    <code>.item { align-self: flex-end; }</code>
+  </section>
+
+  <section>
+    <h2>flex-wrap (quebra de linha)</h2>
+    <p>Define se os itens quebram para novas linhas.</p>
+    <table>
+      <tr><th>Valor</th><th>Descrição</th></tr>
+      <tr><td><code>nowrap</code></td><td>Todos os itens em uma única linha (padrão).</td></tr>
+      <tr><td><code>wrap</code></td><td>Itens quebram para novas linhas.</td></tr>
+      <tr><td><code>wrap-reverse</code></td><td>Itens quebram em ordem reversa.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>flex-flow (atalho)</h2>
+    <p>Combina <code>flex-direction</code> e <code>flex-wrap</code> em uma única linha.</p>
+    <p>Exemplo:</p>
+    <code>flex-flow: row wrap;</code>
+  </section>
+
+  <section>
+    <h2>align-content (espaço entre linhas)</h2>
+    <p>Controla o espaçamento entre as linhas quando há quebra (wrap).</p>
+    <table>
+      <tr><th>Valor</th><th>Descrição</th></tr>
+      <tr><td><code>flex-start</code></td><td>Linhas no topo.</td></tr>
+      <tr><td><code>flex-end</code></td><td>Linhas na base.</td></tr>
+      <tr><td><code>center</code></td><td>Linhas no centro vertical.</td></tr>
+      <tr><td><code>space-between</code></td><td>Espaço entre as linhas.</td></tr>
+      <tr><td><code>space-around</code></td><td>Espaço ao redor das linhas.</td></tr>
+      <tr><td><code>stretch</code></td><td>Linhas esticadas para ocupar o espaço.</td></tr>
+    </table>
+    <div class="dica">⚠️ Só funciona com múltiplas linhas!</div>
+  </section>
+</body>
+</html>
