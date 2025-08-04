@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Anotações sobre CSS Grid</title>
+  <link rel="stylesheet" href="gridLayout.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Anotações sobre Grid</h1>
+
+    <section>
+      <h2>Posicionamento de Colunas e Linhas</h2>
+      <ul>
+        <li><strong>grid-column-start / grid-column-end:</strong> Define onde um item começa e termina nas colunas.</li>
+        <li><strong>grid-row-start / grid-row-end:</strong> Define início e fim nas linhas (vertical).</li>
+        <li><strong>grid-column: 1 / 4;</strong> Shorthand que equivale ao uso de start e end.</li>
+        <li><strong>span:</strong> Permite ocupar múltiplas colunas/linhas. Ex: <code>grid-column: span 3;</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Shorthands</h2>
+      <ul>
+        <li><strong>grid-column:</strong> Combina início e fim de coluna.</li>
+        <li><strong>grid-row:</strong> Combina início e fim de linha.</li>
+        <li><strong>grid-area:</strong> Shorthand com 4 valores: <code>linha-início / coluna-início / linha-fim / coluna-fim</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Definição do Grid</h2>
+      <ul>
+        <li><strong>grid-template-columns / grid-template-rows:</strong> Define colunas e linhas. Ex: <code>repeat(5, 20%)</code>.</li>
+        <li><strong>grid-template:</strong> Shorthand de rows e columns. Ex: <code>grid-template: 50% 50% / 200px;</code></li>
+        <li><strong>repeat():</strong> Simplifica padrões repetitivos. Ex: <code>repeat(3, 1fr)</code></li>
+        <li><strong>fr:</strong> Unidade fracionária que divide o espaço restante proporcionalmente.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ordem e Posicionamento</h2>
+      <ul>
+        <li><strong>order:</strong> Altera a ordem visual dos itens, sem mudar o HTML.</li>
+        <li>Por padrão, todos os itens têm <code>order: 0</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemplo de uso:</h2>
+  <div class="exemplo">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+    </section>
+
+  </main>
+</body>
+</html>
