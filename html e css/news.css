@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ccc;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main news"
+        "footer footer footer";
+    grid-template-columns: 1fr 4.5fr 1.5fr;
+    grid-template-rows: auto 1fr auto;
+    margin: auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+    font-size: 20px;
+    background-color: black;
+    color: aliceblue;
+    margin: 0;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+nav {
+     width: 150px;
+    grid-area: sidebar;
+    background-color: rgb(129, 129, 129);
+    margin-right: 20px;
+    font-size: 1.2em;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav ul li {
+    position: relative;
+    padding: 8px;
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(252, 189, 0, 0.321);
+}
+
+nav ul li:hover {
+  background-color: rgba(252, 189, 0, 0.2);
+ }
+
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+main h2 {
+    color: rgb(252, 189, 0);
+    text-shadow: 2px 1px rgb(75, 51, 0),
+    0px 1px rgb(75, 51, 0);
+}
+main h2:hover{
+    text-decoration: underline  rgb(217, 165, 6);
+}
+
+aside {
+    grid-area: news;
+    padding: 30px;
+}
+
+aside h3 {
+    color: rgb(252, 189, 0);
+    text-shadow: 2px 1px rgba(33, 33, 33, 0.766);
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
