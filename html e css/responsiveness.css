@@ -1,0 +1,93 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f7e9ff;
+    color: #8f8c8c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem;
+    color: #6a1b9a;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background-color: #e0cfff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.361);
+}
+
+.item {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.299);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.186);
+}
+/*
+PADRÕES DE MEDIA
+(depende do site as necessidades)
+| Dispositivo              | Largura máxima sugerida | Exemplo de uso                           |
+| ------------------------ | ----------------------- | ---------------------------------------- |
+| Telas pequenas (celular) | `max-width: 480px`      | Para celulares mais antigos ou compactos |
+| Celular padrão           | `max-width: 600px`      | Para maioria dos smartphones             |
+| Tablets                  | `max-width: 768px`      | iPads e tablets em geral                 |
+| Laptops pequenos         | `max-width: 992px`      | Notebooks menores                        |
+| Laptops/Desktops         | `max-width: 1200px`     | Telas grandes ou full HD                 |
+| Telas muito grandes      | `min-width: 1201px`     | Telas maiores que desktop comum          |
+
+exemplo:
+
+@media (min-width: 320px) and (max-width: 480px){}
+
+main: 320 - 480 || 768 - 1024 || 1025 - 1200 || 1201 - 1440
+*/
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    .item {
+        padding: 0.8rem;
+    }
+}
+
