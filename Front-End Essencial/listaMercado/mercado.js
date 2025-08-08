@@ -21,7 +21,8 @@ function atualizarContador() {
   contador.textContent = `Total: ${total} | Comprados: ${compradosCount} | Pendentes: ${pendentes}`;
 }
 
-function renderizarLista() {
+function renderizarLista(event) {
+  event.preventDefault();
   lista.innerHTML = '';
   let itensFiltrados = [...itens];
 
