@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Browser Object Model</title>
+</head>
+<body>
+    <button onclick="exibirInfo()">Ver Info</button>
+    <pre id="saida"></pre>
+    <script>
+        function exibirInfo(){
+            const infos = {
+                userAgent: navigator.userAgent,
+                plataforma:navigator.plataforma,
+                idioma: navigator.idioma,
+                larguraTela: screen.width,
+                altuaTela: screen.height
+            }
+            document.getElementById('saida').textContent = JSON.stringify(infos, null, 2);
+        }
+    </script>
+</body>
+</html>
