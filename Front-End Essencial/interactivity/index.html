@@ -2,28 +2,21 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8"> <!-- Define codificação de caracteres como UTF-8 -->
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Responsividade em dispositivos móveis -->
     <title>Site Interativo Aprimorado</title>
-    <link rel="stylesheet" href="style.css"> <!-- Vincula o CSS externo -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
-    <!-- =========================
-       CABEÇALHO FIXO E RESPONSIVO
-       ========================= -->
     <header class="header">
         <div class="container header-container">
-            <!-- Botão hamburger para abrir/fechar menu em mobile -->
             <button id="navToggle" class="nav-toggle" aria-controls="navMenu" <!-- Indica qual elemento controla -->
-                aria-expanded="false" <!-- Estado inicial fechado -->
-                aria-label="Abrir menu" <!-- Texto para leitores de tela -->
+                aria-expanded="false" 
+                aria-label="Abrir menu" 
                 >
-                &#9776; <!-- Ícone Unicode de menu (☰) -->
+                &#9776; 
             </button>
-
-            <!-- Navegação principal -->
             <nav id="navMenu" class="nav" role="navigation">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#hero">Início</a></li>
@@ -35,22 +28,15 @@
     </header>
 
     <main>
-        <!-- =========================
-         SEÇÃO HERO
-         ========================= -->
         <section id="hero" class="hero">
             <div class="container">
-                <h1>Bem-vindo ao nosso site!</h1> <!-- Título principal -->
-                <p>Onde você irá conhecer um emaranhado de gostosuras.</p> <!-- Subtítulo -->
-                <a href="#contact" class="btn">Fale Conosco</a> <!-- Link para formulário de contato -->
+                <h1>Bem-vindo ao nosso site!</h1> 
+                <p>Onde você irá conhecer um emaranhado de gostosuras.</p> 
+                <a href="#contact" class="btn">Fale Conosco</a> 
             </div>
         </section>
-
-        <!-- =========================
-         SEÇÃO DE SERVIÇOS
-         ========================= -->
         <section id="services" class="services container">
-            <h2>Receitas</h2> <!-- Título da seção -->
+            <h2>Receitas</h2> 
             <div class="cards">
                 <div class="card">
                     <h3>Brigadeiro</h3>
@@ -69,15 +55,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- =========================
-         SEÇÃO DE CONTATO
-         ========================= -->
         <section id="contact" class="contact container">
             <h2>Contato</h2>
             <form id="contactForm">
                 <div class="form-group">
-                    <label for="name">Nome Completo</label> <!-- Associa label ao input -->
+                    <label for="name">Nome Completo</label> 
                     <input type="text" id="name" name="name" required>
                     <span class="error-msg"></span>
                 </div>
@@ -91,21 +73,17 @@
                     <textarea id="message" name="message" rows="4" required></textarea>
                     <span class="error-msg"></span>
                 </div>
-                <button type="submit" class="btn">Enviar Mensagem</button> <!-- Botão de envio -->
+                <button type="submit" class="btn">Enviar Mensagem</button> 
             </form>
         </section>
     </main>
-
-    <!-- =========================
-       RODAPÉ
-       ========================= -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 SweetCake. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Vincula o JavaScript externo -->
+    <script src="script.js"></script> 
 </body>
 
 </html>
