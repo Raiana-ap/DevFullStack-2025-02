@@ -23,7 +23,7 @@ function makeCoffee(callback) {
 putWaterToBOil(()=>{
     getReadyToMakeCoffee(()=>{
         makeCoffee(()=>{
-            console.log('Yout coffee is ready!')
+            console.log('Your coffee is ready!')
         })
     })
 })
