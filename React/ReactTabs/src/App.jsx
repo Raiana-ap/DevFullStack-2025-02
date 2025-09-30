@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 const contents = [
   {
@@ -35,7 +36,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div id="main">
         <header>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s"
             alt="logo JS"/>
@@ -45,7 +46,7 @@ function App() {
           </div>
         </header>
 
-        <div id="main">
+        <div id="menu">
 
           <div id="button-content">
             {contents.map((tab, index) => (
