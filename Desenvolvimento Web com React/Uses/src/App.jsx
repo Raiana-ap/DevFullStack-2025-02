@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Header from './components/Header.jsx'
+import Header from './componente/Header.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
