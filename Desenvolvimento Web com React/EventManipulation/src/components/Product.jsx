@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Product() {
-    const [productName, setProductname] = useState('');
+    const [productName, setProductName] = useState('');
     const [price, setPrice] = useState('');
     const [category, setCategory] = useState('Eletrônicos');
     const [description, setDescription] = useState('');
@@ -11,7 +11,7 @@ function Product() {
 
     const [ categoryFilter, setCategoryFilter ] = useState('Todos');
 
-    const handleNameChange = (event) => setProductname(event.target.value);
+    const handleNameChange = (event) => setProductName(event.target.value);
     const handlePriceChange = (event) => setPrice(event.target.value);
     const handleCategoryChange = (event) => setCategory(event.target.value);
     const handleDescriptionChange = (event) => setDescription(event.target.value);
@@ -41,7 +41,7 @@ function Product() {
 
         setProducts([...products, newProduct]);
 
-        setProductname('');
+        setProductName('');
         setPrice('');
         setDescription('');
         setCategory('Eletrônicos');
