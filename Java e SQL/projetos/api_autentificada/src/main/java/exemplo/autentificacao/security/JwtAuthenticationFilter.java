@@ -24,12 +24,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         this.jwtService = jwtService;
         this.userRepository = userRepository;
     }
-
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
+
+        // 🔒 Ignora as rotas públicas (sem exigir token)
+        String path = request.getRequestURI();
+        if (path.startsWith("/auth/") || path.startsWith("/v3/api-docs") ||
+                path.startsWith("/swagger") || path.startsWith("/actuator")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         String authHeader = request.getHeader("Authorization");
 
@@ -47,7 +54,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             if (userOpt.isPresent() && jwtService.validateToken(token)) {
                 var userEntity = userOpt.get();
 
-                // Converte a entidade para UserDetails do Spring
                 var userDetails = User.withUsername(userEntity.getUsername())
                         .password(userEntity.getPassword())
                         .roles(userEntity.getRoles().toArray(new String[0]))
