@@ -6,6 +6,7 @@ import exemplo.autentificacao.auth.dto.RegisterRequest;
 import exemplo.autentificacao.security.JwtService;
 import exemplo.autentificacao.user.UserRepository;
 import exemplo.autentificacao.user.User;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Tag(name = "Autorization")
 @RequestMapping("/auth")
 public class AuthController {
     private final UserRepository userRepository;

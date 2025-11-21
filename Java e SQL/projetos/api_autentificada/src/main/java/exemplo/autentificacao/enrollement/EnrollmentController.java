@@ -42,7 +42,7 @@ public class EnrollmentController {
         if (course == null) {
             return ResponseEntity.badRequest().body(Map.of("error", "Curso não encontrado"));
         }
-        if (enrollmentRepository.existsByCourse_IdAndUser_Id(course.getId(), user.getIdUser())) {
+        if (enrollmentRepository.existsByCourse_IdAndUser_IdUser(course.getId(), user.getIdUser())) {
             return ResponseEntity.status(409).body(Map.of("error", "Aluno já está matriculado"));
         }
         Enrollment enrollment = new Enrollment();

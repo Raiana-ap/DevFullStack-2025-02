@@ -7,8 +7,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
-    boolean existsByCourse_IdAndUser_Id(Long courseId, Long userId);
-    List<Enrollment> findByUser_Id(Long userId);
+    boolean existsByCourse_IdAndUser_IdUser(Long courseId, Long userId);
+    List<Enrollment> findByUser_IdUser(Long userId);
     List<Enrollment> findByCourse_Id(Long courseId);
 
     @Query(
